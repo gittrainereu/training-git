@@ -1,4 +1,5 @@
 # git tag 
+## Creating / Working with tags 
 
 ```
 # set tag on current commit -> HEAD of branch 
@@ -15,3 +16,26 @@ git checkout v0.1
 git checkout tags/v0.1 
 
 ```
+
+
+## Deleting tags 
+
+```
+Deleting tags
+# Fetch new tags from online
+git fetch --tags 
+
+# Update master branch (rebase) and fetch all tags in addition from online 
+git checkout master
+git pull --rebase --tags
+
+# Tag local löschen und danach online löschen 
+git tag -d test.tag
+git push --delete origin test.tag
+
+# Tag online löschen und danach lokal 
+# Schritt 1: Über das interface (web) löschen 
+# Schritt 2: aktualisieren 
+git fetch --prune --prune-tags 
+```
+
